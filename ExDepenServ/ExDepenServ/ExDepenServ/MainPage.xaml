@@ -2,52 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ExDepenServ.MainPage"
-             Title="Example">
-
-    <Grid HorizontalOptions="CenterAndExpand"
-          VerticalOptions="CenterAndExpand">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>            
-        </Grid.RowDefinitions>
-        
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
+             xmlns:viewModels="clr-namespace:ExDepenServ; assembly=ExDepenServ"
+             Title="Example Dependency Service"
+             BindingContext="ViewModel">
+    <ContentPage.BindingContext>
+        <viewModels:ViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout HorizontalOptions="CenterAndExpand"
+          VerticalOptions="CenterAndExpand">        
         <Label 
-            Text="Height:"
-            Grid.Row="0"
-            Grid.Column="0"
-            HorizontalOptions="EndAndExpand"
-            FontSize="Large"
-            VerticalOptions="Center" />
-        <Label 
-            Text="{Binding Height}"
-            Grid.Row="0"
-            Grid.Column="1"
+            Text="{Binding Height, StringFormat='Height: {0}'}"            
             TextColor="Black"
-            HorizontalOptions="Start"
+            HorizontalOptions="CenterAndExpand"
             FontSize="Large"
-            VerticalOptions="Center" />
-
-
+            VerticalOptions="CenterAndExpand" />
         <Label 
-            Text="Width:"
-            Grid.Row="1"
-            Grid.Column="0"
-            HorizontalOptions="EndAndExpand"
-            FontSize="Large"
-            VerticalOptions="Center" />
-        <Label 
-            Text="{Binding Width}"
-            Grid.Row="1"
-            Grid.Column="1"
+            Text="{Binding Width, StringFormat='Width: {0}'}"            
             TextColor="Black"
-            HorizontalOptions="Start"
-            VerticalOptions="Center"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
             FontSize="Large"/>
-    </Grid>
-
+    </StackLayout>
 </ContentPage>

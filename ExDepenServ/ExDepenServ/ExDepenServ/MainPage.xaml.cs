@@ -11,8 +11,7 @@ namespace ExDepenServ
     {
         public MainPage()
         {
-            InitializeComponent();
-            BindingContext = new ViewModel();
+            InitializeComponent();            
         }
 
     }
